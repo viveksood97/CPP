@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 
+//Kinda Useless
 std::vector<std::string> split(const std::string& s) {
     std::vector<std::string> ret;
     typedef std::string::size_type string_size;

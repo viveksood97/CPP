@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <vector>
 
+//Time Complexity O(n^2)
 bool isPallindrome(const std::string& word) {
     return std::equal(word.begin(), word.end(), word.rbegin());
 }
