@@ -27,5 +27,5 @@ int main() {
     for(int i = 0; i!=test.size(); ++i) {
         std::cout << test[i] << std::endl;
     }
-    return 0;
+    return 0;;
 }
