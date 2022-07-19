@@ -2,6 +2,15 @@
 #include <vector>
 #include <string>
 
+
+void pprint(const auto& obj) {
+    std::cout << "[";
+    for(int i = 0; i != obj.size(); ++i) {
+        std::string out = i!=obj.size() ? obj[i] + ", " : obj[i];
+        std::cout << out;
+    }
+    std::cout << "]" << std::endl;
+}
 //Kinda Useless to a large extent
 std::vector<std::string> split(const std::string& s) {
     std::vector<std::string> ret;
@@ -26,15 +35,9 @@ std::vector<std::string> split(const std::string& s) {
 
 
 int main() {
-    std::string test;
-    while(std::getline(std::cin, test)) {
-        std::vector<std::string> output = split(test);
-        for(std::vector<std::string>::const_iterator i = output.begin(); i!= output.end(); ++i) {
-            std::cout << *i << std::endl;
-        }
-    }
-
-    
+    std::string test = "Hello World adad adada adadaadad";
+    std::vector<std::string> output = split(test);
+    pprint(output);
     
     return 0;
 }
