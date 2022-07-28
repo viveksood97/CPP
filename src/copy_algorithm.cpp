@@ -15,7 +15,7 @@ void print_seq(const T& obj) {
 
 
 int main() {
-    std::vector<std::string> str = {"Hello World", "dadaddad"};
+    std::vector<std::string> str = {"Hello World", "dadaddad", "dadadadadadad"};
     std::vector<std::string>::iterator begin = str.begin();
     std::vector<std::string>::iterator end = str.end();
 
