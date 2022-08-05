@@ -9,8 +9,16 @@ void pprint(T& to_print) {
     }
 }
 
+template <class T>
+void ppprint(T& to_print) {
+    for (auto p: to_print) {
+        std::cout << p << std::endl;
+    }
+}
+
 int main() {
     std::vector<int> test(10, 100);
     pprint(test);
+    ppprint(test);
     return 0;
 }
