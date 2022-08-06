@@ -17,7 +17,7 @@ void ppprint(T& to_print) {
 }
 
 int main() {
-    std::vector<int> test(10, 100);
+    std::vector<int> test(10, 1000S);
     pprint(test);
     ppprint(test);
     return 0;
