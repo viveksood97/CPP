@@ -13,6 +13,7 @@ std::vector<std::string> allWords(const std::string& word) {
         std::string singleWord;
         for(std::string::const_iterator j = i; j!=word.end(); ++j) {
             singleWord += *j;
+            std::cout << singleWord >> std::endl;
             words.push_back(singleWord);
         }
     }
