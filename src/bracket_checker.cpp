@@ -1,28 +1,29 @@
 #include <iostream>
 #include <list>
-#include <string>
+#include <vector>
+#include <unordered_map>
 
 
 
 
 
 bool isValid(std::string s) {
-    std::list<char>brackets;
-    for(char chr: s) {
-        std::cout << chr << std::endl;
-        if(chr == '(' or chr == '[' or chr == '{'){brackets.push_back(chr);}
-        else{
-            if((chr != ')' and brackets.front() == '(') || (chr != ']' and brackets.front() == '[') || (chr != '}' and brackets.front() == '{')) return false;
-            brackets.pop_front();
+        std::vector<char> stack;
+        std::unordered_map<char, char> tracker = {{'}', '{'}, {']', '['}, {')', '('}};
+        for(char c: s) {
+            if(c == '{' or c == '[' or c == '(') stack.push_back(c);
+            else if(stack.empty()) return false;
+            
+            else if(tracker[c] != stack.back()) return false;
+            else stack.pop_back();
         }
         
+        return true;
     }
-    
-    return brackets.size() != 0? false: true;
-}
 
+    
 int main() {
-    std::string test = "([])";
+    std::string test = "([(])";
     std::cout << isValid(test) << std::endl;
     return 0;
 }
