@@ -18,6 +18,7 @@ int main() {
     delete T;
 
     TestingNewAndDelete* t = new TestingNewAndDelete[10];
+    std::cout << "hello World!" << std::endl;
     delete[] t;
     return 0;
 }
