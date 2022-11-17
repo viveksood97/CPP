@@ -42,6 +42,7 @@ class _shared_ptr{
         std::cout << "inside =" << std::endl;
         this->p = sp.p;
         sp.p = nullptr;
+
     }
 
     ~_shared_ptr() {
@@ -62,7 +63,7 @@ int main() {
     _shared_ptr<int> ptr1(p);
     _shared_ptr<int> ptr2(ptr1);
     _shared_ptr<int> ptr3;
-    ptr3 = ptr2;
+    ptr3 = (_shared_ptr<int>&&)ptr2;
     // _shared_ptr<int> ptr4(p);
     // _shared_ptr<int> ptr5(p);
 
